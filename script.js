@@ -13,7 +13,7 @@ function addTask() {
     li.appendChild(span);
   }
   inputBox.value = "";
-  saveData();
+  saveData()
 }
 
 listContainer.addEventListener(
@@ -21,19 +21,20 @@ listContainer.addEventListener(
   function (e) {
     if (e.target.tagName === "LI") {
       e.target.classList.toggle("checked");
-      saveData();
+      saveData()
     } else if (e.target.tagName === "SPAN") {
       e.target.parentElement.remove();
-      saveData();
+      saveData()
     }
   },
   false
 );
 
 function saveData(){
-    localStorage.setItem("data", listContainer.innerHTML);
+  localStorage.setItem('data', listContainer.innerHTML)
 }
+
 function showTask(){
-    listContainer.innerHTML=localStorage.getItem("data");
+  listContainer.innerHTML=localStorage.getItem('data');
 }
 showTask();
